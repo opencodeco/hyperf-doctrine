@@ -7,8 +7,15 @@ This project provides an integration for the Doctrine ORM and the Hyperf framewo
 ![PHPStan](https://img.shields.io/badge/PHPStan-level%209-brightgreen.svg?style=flat)
 
 ## Install
+
+### Set the OpenCodeCo repository
+```shell
+composer config repositories.opencodeco composer https://composer.opencodeco.dev
 ```
-composer require leocavalcante/hyperf-doctrine
+
+### Install with Composer
+```shell
+composer require opencodeco/hyperf-doctrine
 ```
 
 ## Setup
@@ -53,7 +60,7 @@ return [
 
 Then publish Hyperf Doctrine configurations:
 ```shell
-php bin/hyperf.php vendor:publish leocavalcante/hyperf-doctrine
+php bin/hyperf.php vendor:publish opencodeco/hyperf-doctrine
 ```
 
 You can edit Doctrine's Entity Manager settings in `config/autoload/doctrine.php`:
@@ -131,4 +138,4 @@ Feel free to contribute submiting issues and PRs.
 
 ---
 
-MIT &copy; 2022 Leo Cavalcante
+MIT &copy; 2023
