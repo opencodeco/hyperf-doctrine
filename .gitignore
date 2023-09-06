@@ -1,4 +1,5 @@
-/vendor/
-composer.lock
 *.cache
 *.log
+clover-coverage-report.xml
+composer.lock
+vendor/
