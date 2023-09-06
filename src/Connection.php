@@ -4,11 +4,12 @@ declare(strict_types=1);
 /**
  * This file is part of Hyperf Doctrine.
  *
- * @link     https://github.com/leocavalcante/hyperf-doctrine
- * @document https://github.com/leocavalcante/hyperf-doctrine/blob/main/README.md
- * @contact  @leocavalcante
- * @license  https://github.com/leocavalcante/hyperf-doctrine/blob/main/LICENSE
+ * @link     https://github.com/opencodeco/hyperf-doctrine
+ * @document https://github.com/opencodeco/hyperf-doctrine/blob/main/README.md
+ * @contact  @opencodeco
+ * @license  https://github.com/opencodeco/hyperf-doctrine/blob/main/LICENSE
  */
+
 namespace Hyperf\Doctrine;
 
 use Doctrine\DBAL\Driver\Connection as DoctrineConnection;
@@ -18,7 +19,6 @@ use Doctrine\DBAL\Driver\Result as ResultInterface;
 use Doctrine\DBAL\Driver\Statement as StatementInterface;
 use Doctrine\DBAL\ParameterType;
 use Hyperf\DB\DB;
-use PDOStatement;
 
 final class Connection implements DoctrineConnection
 {
@@ -36,7 +36,7 @@ final class Connection implements DoctrineConnection
 
     public function query(string $sql): ResultInterface
     {
-        /** @var PDOStatement $stmt */
+        /** @var \PDOStatement $stmt */
         $stmt = $this->connection->prepare($sql);
         $stmt->execute();
         return new Result($stmt);

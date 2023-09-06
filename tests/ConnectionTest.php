@@ -4,18 +4,18 @@ declare(strict_types=1);
 /**
  * This file is part of Hyperf Doctrine.
  *
- * @link     https://github.com/leocavalcante/hyperf-doctrine
- * @document https://github.com/leocavalcante/hyperf-doctrine/blob/main/README.md
- * @contact  @leocavalcante
- * @license  https://github.com/leocavalcante/hyperf-doctrine/blob/main/LICENSE
+ * @link     https://github.com/opencodeco/hyperf-doctrine
+ * @document https://github.com/opencodeco/hyperf-doctrine/blob/main/README.md
+ * @contact  @opencodeco
+ * @license  https://github.com/opencodeco/hyperf-doctrine/blob/main/LICENSE
  */
+
 namespace HyperfTest;
 
 use Doctrine\DBAL\Driver\Exception;
 use Hyperf\DB\DB;
 use Hyperf\Doctrine\Connection;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
-use PDOStatement;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -28,14 +28,14 @@ final class ConnectionTest extends TestCase
 
     private DB $db;
 
-    private PDOStatement $stmt;
+    private \PDOStatement $stmt;
 
     private Connection $conn;
 
     protected function setUp(): void
     {
         $this->db = \Mockery::mock(DB::class);
-        $this->stmt = \Mockery::mock(PDOStatement::class);
+        $this->stmt = \Mockery::mock(\PDOStatement::class);
         $this->conn = new Connection($this->db);
     }
 
